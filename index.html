@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Theory by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Sistema de Certificados</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">Sistema de Cetificados</a>
+					<nav id="nav">
+						<a href="index.html">Início</a>
+						<a href="generic.html">Generic</a>
+						<a href="elements.html">Elements</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h1>Bem vindo, <em>Contribuinte</em></h1>
+				<p>Solicite cetificados variados, receba notificações, visualize seus certificados</p>
+			</section>
+
+		
+		<!-- Two -->
+		<section id="two" class="wrapper style1 special">
+			<div class="inner">
+				<header>
+					<h2>Minhas certificações (MAPA)</h2>
+				</header>
+				<div id="mapdiv" style="width:800px; height:500px;"></div>
+				<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+				<script>
+					map = new OpenLayers.Map("mapdiv");
+					map.addLayer(new OpenLayers.Layer.OSM());
+
+					var lonLat = new OpenLayers.LonLat(-46.724955, -23.564705)
+						.transform(
+							new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+							map.getProjectionObject() // to Spherical Mercator Projection
+						);
+
+					var zoom = 13;
+
+					var markers = new OpenLayers.Layer.Markers("Markers");
+					map.addLayer(markers);
+
+					markers.addMarker(new OpenLayers.Marker(lonLat));
+
+					map.setCenter(lonLat, zoom);
+				</script>
+				</center>
+			</div>
+			</div>
+		</section>
+
+		<!-- Two -->
+		<section id="two" class="wrapper style2 special">
+			<div class="inner">
+				<header>
+					<h2>Certificações próximas de vencer</h2>
+				</header>
+				
+			</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="flex">
+						<div class="copyright">
+							&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com">Unsplash</a>.
+						</div>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">linkedIn</span></a></li>
+							<li><a href="#" class="icon fa-pinterest-p"><span class="label">Pinterest</span></a></li>
+							<li><a href="#" class="icon fa-vimeo"><span class="label">Vimeo</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
