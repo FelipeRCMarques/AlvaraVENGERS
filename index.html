@@ -39,7 +39,7 @@
 				<header>
 					<h2>Minhas certificações (MAPA)</h2>
 				</header>
-				<div id="mapdiv" style="width:800px; height:500px;"></div>
+				<div id="mapdiv" style="width:800px; height:500px; align-content: center;"></div>
 				<script src="http://www.openlayers.org/api/OpenLayers.js"></script>
 				<script>
 					map = new OpenLayers.Map("mapdiv");
@@ -51,12 +51,23 @@
 							map.getProjectionObject() // to Spherical Mercator Projection
 						);
 
-					var zoom = 13;
+						var lonLat2 = new OpenLayers.LonLat(-45.724955, -22.564705)
+						.transform(
+							new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+							map.getProjectionObject() // to Spherical Mercator Projection
+						);
+
+					
+
+					var zoom = 16;
 
 					var markers = new OpenLayers.Layer.Markers("Markers");
+
+					
 					map.addLayer(markers);
 
 					markers.addMarker(new OpenLayers.Marker(lonLat));
+					markers.addMarker(new OpenLayers.Marker(lonLat2));
 
 					map.setCenter(lonLat, zoom);
 				</script>
